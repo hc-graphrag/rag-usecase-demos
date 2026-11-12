@@ -1,0 +1,58 @@
+{
+  "cases": [
+    {
+      "case_id": "maintenance",
+      "name": "設備保全",
+      "queries": [{"query_id": "m1", "text": "P-204 異常振動 ベアリング交換", "expected_doc_id": "maint-002"}],
+      "documents": [
+        {"doc_id": "maint-001", "source": "synthetic://maintenance/work-order-001", "title": "P-204 点検", "text": "設備 P-204 2026年4月 定期点検。振動値は正常範囲。"},
+        {"doc_id": "maint-002", "source": "synthetic://maintenance/work-order-002", "title": "P-204 異常振動修理", "text": "設備 P-204 異常振動を確認。ベアリングを交換し、試運転で振動が正常化。"}
+      ]
+    },
+    {
+      "case_id": "support",
+      "name": "サポート",
+      "queries": [{"query_id": "s1", "text": "製品 X2 同期エラー 承認済み再接続手順", "expected_doc_id": "support-002"}],
+      "documents": [
+        {"doc_id": "support-001", "source": "synthetic://support/ticket-001", "title": "X2 ログイン問合せ", "text": "製品 X2 ログインできない。パスワードをリセットして解決。"},
+        {"doc_id": "support-002", "source": "synthetic://support/kb-002", "title": "X2 同期エラー対応", "text": "製品 X2 同期エラー。承認済み手順: 接続状態を確認し、アプリを再接続する。"}
+      ]
+    },
+    {
+      "case_id": "drawings",
+      "name": "設計図面",
+      "queries": [{"query_id": "d1", "text": "図面 A-17 改訂 C 部品 V-22 配管接続", "expected_doc_id": "drawing-002"}],
+      "documents": [
+        {"doc_id": "drawing-001", "source": "synthetic://drawings/A-17-rev-B/page-1", "title": "A-17 改訂B", "text": "図面 A-17 改訂 B 部品 V-21 配管接続を表示。"},
+        {"doc_id": "drawing-002", "source": "synthetic://drawings/A-17-rev-C/page-2", "title": "A-17 改訂C 部品 V-22", "text": "図面 A-17 改訂 C ページ2 部品 V-22 配管接続先はマニホールド M-3。"}
+      ]
+    },
+    {
+      "case_id": "spreadsheets",
+      "name": "Excel/CSV",
+      "queries": [{"query_id": "e1", "text": "2026年Q2 工場東 消費電力 kWh 2480", "expected_doc_id": "sheet-002"}],
+      "documents": [
+        {"doc_id": "sheet-001", "source": "synthetic://sheets/power.xlsx/sheet1/A1:D3", "title": "工場東 Q1", "text": "2026年Q1 工場東 消費電力 合計 2310 kWh。"},
+        {"doc_id": "sheet-002", "source": "synthetic://sheets/power.xlsx/sheet1/A4:D6", "title": "工場東 Q2", "text": "2026年Q2 工場東 消費電力 合計 2480 kWh。合成データ。"}
+      ]
+    },
+    {
+      "case_id": "contracts",
+      "name": "契約書",
+      "queries": [{"query_id": "c1", "text": "契約 K-9 更新期限 60日前 第12条", "expected_doc_id": "contract-002"}],
+      "documents": [
+        {"doc_id": "contract-001", "source": "synthetic://contracts/K-9/rev-1/clause-12", "title": "K-9 契約旧版", "text": "契約 K-9 旧版 第12条 更新通知は30日前。"},
+        {"doc_id": "contract-002", "source": "synthetic://contracts/K-9/rev-2/clause-12", "title": "K-9 契約改訂版 第12条", "text": "契約 K-9 改訂版 第12条 更新期限は満了日の60日前までに通知。"}
+      ]
+    },
+    {
+      "case_id": "clinical",
+      "name": "診療記録",
+      "queries": [{"query_id": "h1", "text": "合成患者 P-01 2026-05 薬剤 M-4 変更理由", "expected_doc_id": "clinical-002"}],
+      "documents": [
+        {"doc_id": "clinical-001", "source": "synthetic://clinical/pseudonym-P-01/visit-001", "title": "合成患者 P-01 初回", "text": "合成患者 P-01 2026-03 薬剤 M-2 を開始。"},
+        {"doc_id": "clinical-002", "source": "synthetic://clinical/pseudonym-P-01/visit-002", "title": "合成患者 P-01 薬剤変更", "text": "合成患者 P-01 2026-05 薬剤 M-4 へ変更。理由は副作用の記録。"}
+      ]
+    }
+  ]
+}
