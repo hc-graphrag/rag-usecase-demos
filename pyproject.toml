@@ -1,0 +1,9 @@
+[project]
+name = "rag-usecase-demos"
+version = "0.1.0"
+description = "Reproducible synthetic RAG retrieval baselines for six business use cases"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.unittest]
+start-directory = "tests"

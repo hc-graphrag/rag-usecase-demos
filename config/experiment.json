@@ -1,0 +1,24 @@
+{
+  "experiment_id": "synthetic-lexical-baseline-v1",
+  "status": "reproducible_demo_only",
+  "date": "2026-11-12",
+  "python": ">=3.11",
+  "dependencies": [],
+  "dataset": "data/synthetic_cases.json",
+  "retriever": {
+    "name": "character_bigram_overlap",
+    "case_sensitive": false,
+    "top_k": 3,
+    "tie_break": "document_id_ascending"
+  },
+  "seed": 0,
+  "generation": {
+    "enabled": false,
+    "model": null
+  },
+  "limitations": [
+    "Synthetic Japanese examples are not representative customer data",
+    "No embeddings, LLM, graph extraction, reranking, ACL, or OCR are exercised",
+    "Scores are lexical overlap rankings, not answer quality metrics"
+  ]
+}
