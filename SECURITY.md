@@ -5,15 +5,15 @@ This public repository must not contain real credentials, personal device detail
 ## Required before publishing
 
 1. After cloning, run `bash scripts/install-hooks.sh` once.
-2. Commit changes. The pre-commit hook inspects staged content and blocks absolute local paths, credential-like values, private network addresses, and sensitive filenames. Warnings are blocking too.
-3. Push and open a pull request only after the hook passes.
-4. Wait for the GitHub Actions hook smoke test to pass before merging.
+2. Commit changes. The pre-commit hook inspects staged content and blocks absolute local paths, credential-like values, private network addresses, and sensitive filenames.
+3. Before every push, the pre-push hook scans all outgoing commits and stops publication if a finding is present.
+4. Open a pull request only after both local hooks pass. GitHub Actions repeats a smoke test for the hooks.
 
-GitHub-based file creation must receive the same content scan before any public write. A repository hook and a server-side check are separate safeguards.
+GitHub-based file creation bypasses local Git hooks. Run the same content scan before any public API write.
 
 ## Manual check
 
-Run `bash scripts/pre-commit-check.sh` before committing. It checks staged blobs, which are the actual contents included in the commit.
+Run `bash scripts/pre-commit-check.sh` before committing. It checks staged blobs, the exact content included in the commit.
 
 ## If information is exposed
 
